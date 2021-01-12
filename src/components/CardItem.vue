@@ -8,6 +8,7 @@
       <span>{{ character.occupation }}</span>
       <span>{{ character.species }}</span>
     </div>
+    <slot></slot>
   </div>
 </template>
 <script>
