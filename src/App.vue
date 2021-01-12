@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="space">
+    <div class="container">
+      <div class="row center">
+        <h1>
+          Futurama
+        </h1>
+      </div>
+      <div class="row center">
+        <div class="row between">
+          <CardItem
+            v-for="(character, index) in characters"
+            :character="character"
+            :key="index"
+            :index="parseInt(index + 1)"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import store from "@/fakeStore/characters"
+import CardItem from "@/components/CardItem";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
-</script>
+    CardItem
+  },
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data() {
+    return {
+      characters: store.characters
+    }
+  }
+};
+</script>
