@@ -7,8 +7,8 @@
       <strong class="carditem__title">{{ character.name.first }} {{ character.name.last }}</strong>
       <span>{{ character.occupation }}</span>
       <span>{{ character.species }}</span>
+      <slot></slot>
     </div>
-    <slot></slot>
   </div>
 </template>
 <script>

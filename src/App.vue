@@ -10,13 +10,13 @@
             v-for="(character, index) in characters"
             :character="character"
             :key="index"
-            :index="parseInt(index + 1)"
+            :index="index"
           >
             <ToggleButton
               :item="character"
-              labelEnableText="Quit from Favs"
-              labelDisableText="Add to Favs"
               :defaultState="false"
+              :id="index.toString()"
+              @OnChange="AddTofavs()"
             />
           </CardItem>
         </div>
@@ -40,6 +40,12 @@ export default {
     return {
       characters: store.characters
     };
+  },
+
+  methods: {
+    AddTofavs() {
+      this.$emit("AddTofavs")
+    }
   }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <label
-    :for="id + '_button'"
+    :for="'button-'+id"
     :class="{ active: isActive }"
     class="toggle__button"
     @change="OnChange"
@@ -11,7 +11,7 @@
     <input
       type="checkbox"
       :disabled="disabled"
-      :id="id + '_button'"
+      :id="'button-'+id"
       v-model="checkedValue"
     />
     <span class="toggle__switch"></span>
